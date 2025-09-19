@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { MapPin } from "lucide-react";
+import { MapPin, Satellite, Navigation } from "lucide-react";
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
 
@@ -121,40 +121,51 @@ export const PollutionMap = ({ locations }: PollutionMapProps) => {
   }, []);
 
   return (
-    <Card className="shadow-card">
-      <CardHeader>
-        <CardTitle className="flex items-center space-x-2">
-          <MapPin className="w-5 h-5 text-primary" />
-          <span>Pollution Hotspot Map</span>
+    <Card className="glass-card shadow-floating border-0 overflow-hidden scale-in-animation">
+      <CardHeader className="relative bg-gradient-to-r from-accent/5 to-primary/5 border-b border-accent/20">
+        <div className="absolute inset-0 shimmer-effect opacity-0 hover:opacity-100 transition-opacity duration-500" />
+        <CardTitle className="relative flex items-center space-x-3 text-xl font-bold">
+          <div className="p-2 bg-gradient-environmental rounded-lg">
+            <Satellite className="w-5 h-5 text-white" />
+          </div>
+          <span className="bg-gradient-to-r from-accent to-primary bg-clip-text text-transparent">
+            Pollution Hotspot Map
+          </span>
         </CardTitle>
-        <CardDescription>
-          Geographic visualization of sampling locations and risk levels
+        <CardDescription className="text-base text-accent/80">
+          🗺️ Geographic visualization of sampling locations and risk levels
         </CardDescription>
       </CardHeader>
-      <CardContent>
+      <CardContent className="p-6">
         <div 
           ref={mapRef} 
-          className="w-full h-[400px] rounded-lg border"
-          style={{ minHeight: '400px' }}
+          className="w-full h-[450px] rounded-xl border border-primary/20 shadow-glass overflow-hidden"
+          style={{ minHeight: '450px' }}
         />
         
-        {/* Legend */}
-        <div className="mt-4 flex flex-wrap gap-4 text-sm">
-          <div className="flex items-center space-x-2">
-            <div className="w-4 h-4 bg-pollution-safe rounded-full border-2 border-white shadow"></div>
-            <span>Safe</span>
+        {/* 🎨 Enhanced Legend */}
+        <div className="mt-6 p-4 glass-card rounded-xl border border-primary/10">
+          <div className="flex items-center space-x-2 mb-3">
+            <Navigation className="w-4 h-4 text-primary" />
+            <span className="font-semibold text-primary">Risk Level Legend</span>
           </div>
-          <div className="flex items-center space-x-2">
-            <div className="w-4 h-4 bg-pollution-moderate rounded-full border-2 border-white shadow"></div>
-            <span>Moderate Risk</span>
-          </div>
-          <div className="flex items-center space-x-2">
-            <div className="w-4 h-4 bg-pollution-high rounded-full border-2 border-white shadow"></div>
-            <span>High Risk</span>
-          </div>
-          <div className="flex items-center space-x-2">
-            <div className="w-4 h-4 bg-pollution-critical rounded-full border-2 border-white shadow"></div>
-            <span>Critical Risk</span>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm">
+            <div className="flex items-center space-x-3 p-2 rounded-lg hover:bg-success/5 transition-colors">
+              <div className="w-4 h-4 bg-pollution-safe rounded-full border-2 border-white shadow-sm"></div>
+              <span className="font-medium">✅ Safe</span>
+            </div>
+            <div className="flex items-center space-x-3 p-2 rounded-lg hover:bg-warning/5 transition-colors">
+              <div className="w-4 h-4 bg-pollution-moderate rounded-full border-2 border-white shadow-sm"></div>
+              <span className="font-medium">⚠️ Moderate Risk</span>
+            </div>
+            <div className="flex items-center space-x-3 p-2 rounded-lg hover:bg-destructive/5 transition-colors">
+              <div className="w-4 h-4 bg-pollution-high rounded-full border-2 border-white shadow-sm"></div>
+              <span className="font-medium">🔶 High Risk</span>
+            </div>
+            <div className="flex items-center space-x-3 p-2 rounded-lg hover:bg-destructive/10 transition-colors">
+              <div className="w-4 h-4 bg-pollution-critical rounded-full border-2 border-white shadow-sm"></div>
+              <span className="font-medium">🚨 Critical Risk</span>
+            </div>
           </div>
         </div>
       </CardContent>

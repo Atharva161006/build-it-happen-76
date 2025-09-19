@@ -108,23 +108,31 @@ export const DataEntryForm = ({ onDataSubmit }: DataEntryFormProps) => {
   };
 
   return (
-    <Card className="shadow-card">
-      <CardHeader>
-        <CardTitle className="flex items-center space-x-2">
-          <Beaker className="w-5 h-5 text-primary" />
-          <span>Sample Data Entry</span>
+    <Card className="glass-card shadow-elevated border-0 overflow-hidden slide-up-animation">
+      {/* ✨ Header with gradient background */}
+      <CardHeader className="relative bg-gradient-to-r from-primary/5 to-secondary/5 border-b border-primary/10">
+        <div className="absolute inset-0 shimmer-effect" />
+        <CardTitle className="relative flex items-center space-x-3 text-xl">
+          <div className="p-2 bg-gradient-primary rounded-lg shadow-glow">
+            <Beaker className="w-5 h-5 text-white" />
+          </div>
+          <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent font-bold">
+            Sample Data Entry
+          </span>
         </CardTitle>
-        <CardDescription>
-          Enter sampling location and heavy metal concentrations for analysis
+        <CardDescription className="text-base text-muted-foreground/80">
+          🧪 Enter sampling location and heavy metal concentrations for comprehensive analysis
         </CardDescription>
       </CardHeader>
-      <CardContent className="space-y-6">
-        <form onSubmit={handleSubmit} className="space-y-6">
-          {/* Location Information */}
-          <div className="space-y-4">
-            <div className="flex items-center space-x-2 text-sm font-medium text-muted-foreground">
-              <MapPin className="w-4 h-4" />
-              <span>Location Information</span>
+      <CardContent className="space-y-8 p-8">
+        <form onSubmit={handleSubmit} className="space-y-8">
+          {/* 📍 Location Information Section */}
+          <div className="space-y-6 p-6 glass-card rounded-xl border border-primary/20">
+            <div className="flex items-center space-x-3 text-base font-semibold text-primary">
+              <div className="p-2 bg-gradient-primary rounded-lg">
+                <MapPin className="w-4 h-4 text-white" />
+              </div>
+              <span>📍 Location Information</span>
             </div>
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
@@ -162,11 +170,13 @@ export const DataEntryForm = ({ onDataSubmit }: DataEntryFormProps) => {
             </div>
           </div>
 
-          {/* Sampling Date */}
-          <div className="space-y-4">
-            <div className="flex items-center space-x-2 text-sm font-medium text-muted-foreground">
-              <Calendar className="w-4 h-4" />
-              <span>Sampling Information</span>
+          {/* 📅 Sampling Date Section */}
+          <div className="space-y-6 p-6 glass-card rounded-xl border border-secondary/20">
+            <div className="flex items-center space-x-3 text-base font-semibold text-secondary">
+              <div className="p-2 bg-gradient-secondary rounded-lg">
+                <Calendar className="w-4 h-4 text-white" />
+              </div>
+              <span>📅 Sampling Information</span>
             </div>
             
             <div className="w-full md:w-1/3">
@@ -180,11 +190,13 @@ export const DataEntryForm = ({ onDataSubmit }: DataEntryFormProps) => {
             </div>
           </div>
 
-          {/* Heavy Metal Concentrations */}
-          <div className="space-y-4">
-            <div className="flex items-center space-x-2 text-sm font-medium text-muted-foreground">
-              <Beaker className="w-4 h-4" />
-              <span>Heavy Metal Concentrations (mg/L)</span>
+          {/* 🧪 Heavy Metal Concentrations Section */}
+          <div className="space-y-6 p-6 glass-card rounded-xl border border-accent/20">
+            <div className="flex items-center space-x-3 text-base font-semibold text-accent">
+              <div className="p-2 bg-gradient-to-r from-accent to-accent-light rounded-lg">
+                <Beaker className="w-4 h-4 text-white" />
+              </div>
+              <span>🧪 Heavy Metal Concentrations (mg/L)</span>
             </div>
             
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
@@ -262,10 +274,11 @@ export const DataEntryForm = ({ onDataSubmit }: DataEntryFormProps) => {
 
           <Button 
             type="submit" 
-            className="w-full bg-gradient-primary hover:bg-primary/90 transition-smooth"
+            className="w-full h-14 bg-gradient-environmental hover:shadow-floating text-white font-semibold text-lg rounded-xl interactive-scale transition-all duration-500 relative overflow-hidden group"
           >
-            <Save className="w-4 h-4 mr-2" />
-            Analyze Sample
+            <div className="absolute inset-0 shimmer-effect group-hover:opacity-100 opacity-0 transition-opacity duration-500" />
+            <Save className="w-5 h-5 mr-3 relative z-10" />
+            <span className="relative z-10">🚀 Analyze Sample</span>
           </Button>
         </form>
       </CardContent>

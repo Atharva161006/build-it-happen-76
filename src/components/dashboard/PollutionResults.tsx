@@ -1,7 +1,7 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Progress } from "@/components/ui/progress";
-import { AlertTriangle, CheckCircle, XCircle, AlertCircle } from "lucide-react";
+import { AlertTriangle, CheckCircle, XCircle, AlertCircle, MapPin, Calendar, BarChart3 } from "lucide-react";
 import { PollutionResults as Results } from "@/lib/pollution-calculations";
 
 interface PollutionResultsProps {
@@ -44,45 +44,74 @@ export const PollutionResults = ({ results, location, date }: PollutionResultsPr
   };
 
   return (
-    <div className="space-y-6">
-      {/* Overall Risk Assessment */}
-      <Card className="shadow-card">
-        <CardHeader>
-          <CardTitle className="flex items-center justify-between">
-            <div className="flex items-center space-x-2">
-              {getRiskIcon(results.riskLevel)}
-              <span>Pollution Risk Assessment</span>
+    <div className="space-y-8">
+      {/* 🎯 Overall Risk Assessment with advanced styling */}
+      <Card className="glass-card shadow-floating border-0 overflow-hidden scale-in-animation">
+        <CardHeader className="relative">
+          <div className="absolute inset-0 bg-gradient-to-r from-primary/5 to-secondary/5" />
+          <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-environmental" />
+          
+          <CardTitle className="relative flex items-center justify-between text-xl z-10">
+            <div className="flex items-center space-x-4">
+              <div className="p-3 glass-card rounded-xl">
+                {getRiskIcon(results.riskLevel)}
+              </div>
+              <div>
+                <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent font-bold">
+                  Pollution Risk Assessment
+                </span>
+                <div className="text-sm text-muted-foreground font-normal mt-1">
+                  Comprehensive environmental analysis
+                </div>
+              </div>
             </div>
-            <Badge className={getRiskColor(results.riskLevel)}>
+            <Badge className={`${getRiskColor(results.riskLevel)} px-4 py-2 text-sm font-bold rounded-xl shadow-lg interactive-scale`}>
               {results.riskLevel.toUpperCase()}
             </Badge>
           </CardTitle>
-          <CardDescription>
-            Analysis for {location} • {new Date(date).toLocaleDateString()}
+          <CardDescription className="relative z-10 text-base mt-4 flex items-center space-x-4">
+            <span className="flex items-center space-x-2">
+              <MapPin className="w-4 h-4" />
+              <span>{location}</span>
+            </span>
+            <span className="w-1 h-1 bg-muted-foreground rounded-full" />
+            <span className="flex items-center space-x-2">
+              <Calendar className="w-4 h-4" />
+              <span>{new Date(date).toLocaleDateString()}</span>
+            </span>
           </CardDescription>
         </CardHeader>
-        <CardContent>
+        <CardContent className="relative z-10 p-8">
           {results.exceedsStandards.length > 0 && (
-            <div className="p-4 bg-destructive/10 border border-destructive/20 rounded-lg">
-              <h4 className="font-semibold text-destructive mb-2 flex items-center">
-                <AlertTriangle className="w-4 h-4 mr-2" />
-                Standards Exceeded
+            <div className="glass-card p-6 border border-destructive/30 rounded-xl bg-gradient-to-r from-destructive/5 to-destructive/10 glow-effect">
+              <h4 className="font-bold text-destructive mb-3 flex items-center text-lg">
+                <div className="p-2 bg-destructive/20 rounded-lg mr-3">
+                  <AlertTriangle className="w-5 h-5" />
+                </div>
+                ⚠️ Standards Exceeded
               </h4>
-              <p className="text-sm text-destructive/80">
-                The following metals exceed BIS safety standards: {results.exceedsStandards.join(', ')}
+              <p className="text-destructive/90 font-medium">
+                The following metals exceed BIS safety standards: 
+                <span className="font-bold"> {results.exceedsStandards.join(', ')}</span>
               </p>
             </div>
           )}
         </CardContent>
       </Card>
 
-      {/* Pollution Indices */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        {/* HPI - Heavy Metal Pollution Index */}
-        <Card className="shadow-card">
-          <CardHeader>
-            <CardTitle className="text-lg">Heavy Metal Pollution Index</CardTitle>
-            <CardDescription>HPI • Weighted average of metal concentrations</CardDescription>
+      {/* 📊 Pollution Indices with enhanced cards */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        {/* 📈 HPI - Heavy Metal Pollution Index */}
+        <Card className="glass-card shadow-elevated border-0 overflow-hidden hover:shadow-floating transition-all duration-500 interactive-scale slide-up-animation">
+          <CardHeader className="relative bg-gradient-to-br from-primary/10 to-primary/5 border-b border-primary/20">
+            <div className="absolute inset-0 shimmer-effect opacity-0 hover:opacity-100 transition-opacity duration-500" />
+            <CardTitle className="relative text-xl font-bold text-primary flex items-center space-x-3">
+              <BarChart3 className="w-6 h-6" />
+              <span>Heavy Metal Pollution Index</span>
+            </CardTitle>
+            <CardDescription className="relative text-base text-primary/80 font-medium">
+              HPI • Weighted average of metal concentrations
+            </CardDescription>
           </CardHeader>
           <CardContent>
             <div className="space-y-4">

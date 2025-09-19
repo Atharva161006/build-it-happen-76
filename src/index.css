@@ -2,76 +2,91 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Environmental Monitoring Design System - All colors MUST be HSL */
+/* 🌊 Advanced Environmental Monitoring Design System - HSL Only */
 
 @layer base {
   :root {
-    /* Base environmental palette */
-    --background: 210 20% 98%;
-    --foreground: 200 10% 15%;
+    /* 🎨 Sophisticated Color Palette */
+    --background: 210 25% 97%;
+    --foreground: 215 25% 12%;
 
-    /* Card system */
+    /* 💎 Glassmorphism Card System */
     --card: 0 0% 100%;
-    --card-foreground: 200 10% 15%;
+    --card-foreground: 215 20% 15%;
+    --card-glass: 210 40% 98%;
 
-    /* Popover system */
-    --popover: 0 0% 100%;
-    --popover-foreground: 200 10% 15%;
+    /* 🔮 Advanced Popover System */
+    --popover: 210 40% 99%;
+    --popover-foreground: 215 20% 15%;
 
-    /* Environmental primary - Deep ocean blue */
-    --primary: 200 85% 35%;
-    --primary-foreground: 0 0% 98%;
-    --primary-light: 200 70% 45%;
-    --primary-dark: 200 90% 25%;
+    /* 🌊 Ocean-Inspired Primary Palette */
+    --primary: 200 95% 40%;
+    --primary-foreground: 0 0% 100%;
+    --primary-light: 200 85% 50%;
+    --primary-dark: 200 100% 30%;
+    --primary-glow: 200 90% 65%;
 
-    /* Secondary - Forest green */
-    --secondary: 150 60% 35%;
-    --secondary-foreground: 0 0% 98%;
-    --secondary-light: 150 50% 45%;
+    /* 🌿 Nature-Inspired Secondary */
+    --secondary: 155 65% 40%;
+    --secondary-foreground: 0 0% 100%;
+    --secondary-light: 155 55% 50%;
+    --secondary-glow: 155 60% 65%;
 
-    /* Earth tones */
-    --muted: 30 20% 92%;
-    --muted-foreground: 200 8% 45%;
+    /* 🍃 Earth Tone Refinements */
+    --muted: 25 15% 94%;
+    --muted-foreground: 215 15% 50%;
 
-    /* Accent - Environmental teal */
-    --accent: 180 55% 40%;
-    --accent-foreground: 0 0% 98%;
+    /* ✨ Accent Colors */
+    --accent: 185 60% 45%;
+    --accent-foreground: 0 0% 100%;
+    --accent-light: 185 50% 55%;
 
-    /* Alert system for pollution levels */
-    --destructive: 0 84% 60%;
-    --destructive-foreground: 0 0% 98%;
-    --warning: 35 85% 55%;
-    --warning-foreground: 0 0% 15%;
-    --success: 150 75% 35%;
-    --success-foreground: 0 0% 98%;
+    /* 🚨 Enhanced Alert System */
+    --destructive: 0 88% 62%;
+    --destructive-foreground: 0 0% 100%;
+    --warning: 38 90% 58%;
+    --warning-foreground: 0 0% 100%;
+    --success: 155 70% 40%;
+    --success-foreground: 0 0% 100%;
 
-    /* Pollution level indicators */
-    --pollution-safe: 150 75% 35%;
-    --pollution-moderate: 35 85% 55%;
-    --pollution-high: 15 85% 55%;
-    --pollution-critical: 0 84% 60%;
+    /* 📊 Pollution Level Indicators */
+    --pollution-safe: 155 70% 40%;
+    --pollution-moderate: 38 90% 58%;
+    --pollution-high: 18 88% 58%;
+    --pollution-critical: 0 88% 62%;
 
-    /* Interface elements */
-    --border: 210 20% 88%;
-    --input: 0 0% 100%;
-    --ring: 200 85% 35%;
+    /* 🔲 Interface Elements */
+    --border: 215 20% 90%;
+    --input: 210 40% 99%;
+    --ring: 200 95% 40%;
 
-    /* Gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-light)));
+    /* 🎨 Advanced Gradient System */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary-dark)), hsl(var(--primary)), hsl(var(--primary-light)));
     --gradient-secondary: linear-gradient(135deg, hsl(var(--secondary)), hsl(var(--secondary-light)));
-    --gradient-environmental: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--accent)));
-    --gradient-background: linear-gradient(180deg, hsl(var(--background)), hsl(210 15% 96%));
+    --gradient-environmental: linear-gradient(120deg, hsl(var(--primary)), hsl(var(--accent)), hsl(var(--secondary)));
+    --gradient-background: linear-gradient(135deg, hsl(210 30% 98%), hsl(200 25% 96%), hsl(190 20% 97%));
+    --gradient-glass: linear-gradient(135deg, hsl(210 40% 99% / 0.8), hsl(200 35% 97% / 0.6));
+    --gradient-glow: radial-gradient(circle at 50% 50%, hsl(var(--primary-glow) / 0.15), transparent 70%);
+    --gradient-mesh: conic-gradient(from 0deg at 50% 50%, hsl(var(--primary) / 0.1), hsl(var(--secondary) / 0.1), hsl(var(--accent) / 0.1), hsl(var(--primary) / 0.1));
 
-    /* Shadows */
-    --shadow-environmental: 0 10px 30px -10px hsl(var(--primary) / 0.1);
-    --shadow-card: 0 4px 20px -4px hsl(var(--primary) / 0.1);
-    --shadow-glow: 0 0 40px hsl(var(--primary) / 0.15);
+    /* ✨ Advanced Shadow System */
+    --shadow-environmental: 0 10px 40px -12px hsl(var(--primary) / 0.15);
+    --shadow-card: 0 8px 32px -8px hsl(var(--primary) / 0.12);
+    --shadow-glow: 0 0 60px hsl(var(--primary-glow) / 0.2);
+    --shadow-glass: 0 8px 32px -8px hsl(215 25% 12% / 0.08);
+    --shadow-elevated: 0 20px 60px -15px hsl(var(--primary) / 0.2);
+    --shadow-floating: 0 25px 80px -20px hsl(var(--primary) / 0.25);
 
-    /* Animations */
-    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    --transition-bounce: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    /* 🎭 Animation System */
+    --transition-smooth: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+    --transition-bounce: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    --transition-spring: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    --transition-glass: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
-    --radius: 0.75rem;
+    /* 📐 Advanced Radius System */
+    --radius: 1rem;
+    --radius-lg: 1.5rem;
+    --radius-xl: 2rem;
 
     --sidebar-background: 0 0% 98%;
 
@@ -91,46 +106,68 @@
   }
 
   .dark {
-    /* Dark environmental theme */
-    --background: 200 20% 8%;
-    --foreground: 210 15% 92%;
+    /* 🌙 Dark Environmental Theme */
+    --background: 215 25% 6%;
+    --foreground: 210 15% 95%;
 
-    --card: 200 15% 10%;
-    --card-foreground: 210 15% 92%;
+    /* 💎 Dark Glassmorphism */
+    --card: 215 20% 8%;
+    --card-foreground: 210 15% 95%;
+    --card-glass: 215 15% 10%;
 
-    --popover: 200 15% 10%;
-    --popover-foreground: 210 15% 92%;
+    --popover: 215 20% 8%;
+    --popover-foreground: 210 15% 95%;
 
-    --primary: 200 75% 55%;
-    --primary-foreground: 200 20% 8%;
-    --primary-light: 200 70% 65%;
-    --primary-dark: 200 85% 45%;
+    /* 🌊 Dark Ocean Theme */
+    --primary: 200 85% 60%;
+    --primary-foreground: 215 25% 6%;
+    --primary-light: 200 80% 70%;
+    --primary-dark: 200 90% 50%;
+    --primary-glow: 200 75% 75%;
 
-    --secondary: 150 45% 45%;
-    --secondary-foreground: 200 20% 8%;
-    --secondary-light: 150 40% 55%;
+    --secondary: 155 55% 50%;
+    --secondary-foreground: 215 25% 6%;
+    --secondary-light: 155 50% 60%;
+    --secondary-glow: 155 45% 70%;
 
-    --muted: 200 10% 15%;
-    --muted-foreground: 210 10% 65%;
+    --muted: 215 15% 12%;
+    --muted-foreground: 210 10% 70%;
 
-    --accent: 180 45% 50%;
-    --accent-foreground: 200 20% 8%;
+    --accent: 185 50% 55%;
+    --accent-foreground: 215 25% 6%;
+    --accent-light: 185 45% 65%;
 
-    --destructive: 0 75% 65%;
-    --destructive-foreground: 200 20% 8%;
-    --warning: 35 80% 65%;
-    --warning-foreground: 200 20% 8%;
-    --success: 150 60% 45%;
-    --success-foreground: 200 20% 8%;
+    --destructive: 0 80% 70%;
+    --destructive-foreground: 215 25% 6%;
+    --warning: 38 85% 68%;
+    --warning-foreground: 215 25% 6%;
+    --success: 155 60% 50%;
+    --success-foreground: 215 25% 6%;
 
-    --pollution-safe: 150 60% 45%;
-    --pollution-moderate: 35 80% 65%;
-    --pollution-high: 15 80% 65%;
-    --pollution-critical: 0 75% 65%;
+    --pollution-safe: 155 60% 50%;
+    --pollution-moderate: 38 85% 68%;
+    --pollution-high: 18 80% 68%;
+    --pollution-critical: 0 80% 70%;
 
-    --border: 200 15% 20%;
-    --input: 200 15% 12%;
-    --ring: 200 75% 55%;
+    --border: 215 15% 18%;
+    --input: 215 20% 10%;
+    --ring: 200 85% 60%;
+
+    /* 🎨 Dark Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary-dark)), hsl(var(--primary)), hsl(var(--primary-light)));
+    --gradient-secondary: linear-gradient(135deg, hsl(var(--secondary)), hsl(var(--secondary-light)));
+    --gradient-environmental: linear-gradient(120deg, hsl(var(--primary)), hsl(var(--accent)), hsl(var(--secondary)));
+    --gradient-background: linear-gradient(135deg, hsl(215 25% 6%), hsl(210 20% 8%), hsl(205 15% 10%));
+    --gradient-glass: linear-gradient(135deg, hsl(215 20% 10% / 0.8), hsl(210 15% 12% / 0.6));
+    --gradient-glow: radial-gradient(circle at 50% 50%, hsl(var(--primary-glow) / 0.1), transparent 70%);
+
+    /* ✨ Dark Shadows */
+    --shadow-environmental: 0 10px 40px -12px hsl(var(--primary) / 0.3);
+    --shadow-card: 0 8px 32px -8px hsl(var(--primary) / 0.2);
+    --shadow-glow: 0 0 60px hsl(var(--primary-glow) / 0.15);
+    --shadow-glass: 0 8px 32px -8px hsl(0 0% 0% / 0.3);
+    --shadow-elevated: 0 20px 60px -15px hsl(var(--primary) / 0.4);
+    --shadow-floating: 0 25px 80px -20px hsl(var(--primary) / 0.5);
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
@@ -149,5 +186,97 @@
 
   body {
     @apply bg-background text-foreground;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* 🎨 Advanced Animation Keyframes */
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+  }
+
+  @keyframes glow-pulse {
+    0%, 100% { box-shadow: 0 0 20px hsl(var(--primary) / 0.1); }
+    50% { box-shadow: 0 0 40px hsl(var(--primary) / 0.2); }
+  }
+
+  @keyframes shimmer {
+    0% { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
+  }
+
+  @keyframes slide-up {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+  }
+
+  @keyframes scale-in {
+    from { transform: scale(0.95); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+  }
+
+  @keyframes fade-in {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  /* 🔥 Utility Classes */
+  .glass-card {
+    @apply bg-gradient-to-br from-white/80 to-white/40 backdrop-blur-xl border border-white/20;
+    box-shadow: var(--shadow-glass);
+  }
+
+  .glass-card-dark {
+    @apply bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-xl border border-white/10;
+  }
+
+  .floating-animation {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .glow-effect {
+    animation: glow-pulse 3s ease-in-out infinite;
+  }
+
+  .shimmer-effect {
+    background: linear-gradient(90deg, transparent, hsl(var(--primary) / 0.1), transparent);
+    background-size: 200% 100%;
+    animation: shimmer 2s infinite;
+  }
+
+  .slide-up-animation {
+    animation: slide-up 0.6s ease-out;
+  }
+
+  .scale-in-animation {
+    animation: scale-in 0.4s ease-out;
+  }
+
+  .fade-in-animation {
+    animation: fade-in 0.5s ease-out;
+  }
+
+  /* 🎯 Interactive Elements */
+  .interactive-scale {
+    @apply transition-all duration-300 ease-out;
+  }
+
+  .interactive-scale:hover {
+    @apply scale-105 shadow-lg;
+  }
+
+  .interactive-glow:hover {
+    box-shadow: 0 0 30px hsl(var(--primary) / 0.3);
+  }
+
+  /* 📱 Responsive Animations */
+  @media (prefers-reduced-motion: reduce) {
+    .floating-animation,
+    .glow-effect,
+    .shimmer-effect {
+      animation: none;
+    }
   }
 }
